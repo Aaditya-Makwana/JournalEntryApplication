@@ -21,15 +21,6 @@ public class PublicController {
         return "OK";
     }
 
-    @GetMapping
-    public ResponseEntity<?> getAllUsers() {
-        List<User> users = userService.getAll();
-        if(users.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(users, HttpStatus.OK);
-    }
-
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody User user) {
         try{
